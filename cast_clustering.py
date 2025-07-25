@@ -1,4 +1,3 @@
-import math
 import numpy as np
 
 def euclidean_similarity(a, b, max_dist):
