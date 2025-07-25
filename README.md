@@ -1,6 +1,6 @@
 # Clustering Analysis
 
-This repository contains implementations of core clustering algorithms for analyzing multidimensional biological data, particularly expression vectors. These methods enable grouping of data points based on similarity or distance, using approaches such as k-centres, Lloyd’s k-means, soft k-means, Cluster Affinity Search Technique (CAST) clustering with Pearson correlation, and UPGMA hierarchical clustering.
+This repository contains implementations of core clustering algorithms for analyzing multidimensional biological data, particularly expression vectors. These methods enable grouping of data points based on similarity or distance, using approaches such as k-centres, Lloyd’s k-means algorithm, soft k-means, Cluster Affinity Search Technique (CAST) algorithm, and UPGMA hierarchical clustering.
 
 ---
 
@@ -12,11 +12,11 @@ In biology, clusters refer to groups of expression vectors (numerical representa
 
 ## 📁 Files in This Repository
 
-- `k-centres_clustering.py`: Implements k-centres clustering by iteratively selecting the farthest point as a new center, then assigning points to nearest centers.
-- `lloyd_k-means_clustering.py`: Implements k-means clustering with a probabilistic initialization (k-means++), followed by iterative refinement of cluster centers by recalculating the center of gravity to minimize distortion within clusters.
+- `k-centres_clustering.py`: Implements k-centres clustering by iteratively selecting the farthest point as a new centre, then assigning points to nearest centres.
+- `lloyd_k-means_clustering.py`: Implements k-means clustering with a probabilistic initialization (k-means++), followed by iterative refinement of cluster centres by recalculating the centre of gravity to minimize distortion within clusters.
 - `soft_k-means_clustering`: Implements soft k-means clustering with a softness parameter beta, allowing probabilistic cluster membership and weighted mean updates.
 - `hierarchical_clustering.py`: Implements UPGMA clustering by converting expression vectors into distance a matrix using Pearson's correlation, grouping data points that minimize distance.
-- `cast_clustering.py`: Implements CAST clustering, using Pearson's correlation to build a similarity matrix and cluster points by affinity threshold theta, adding/removing points to optimize cluster cohesion.
+- `cast_clustering.py`: Implements the CAST clustering algorithm, building a normalized distance-based similarity matrix and forming clusters by iteratively adding/removing points based on an affinity threshold theta.
 
 ---
 
@@ -69,23 +69,23 @@ The variables points (expression vector matrix), k (number of clusters), beta (s
 
 ### k-Centres
 
-- Selects initial centers by iteratively choosing the point farthest from existing centers.
-- Assigns each point to its nearest center forming clusters.
-- Does not update centers after initial selection, aiming to minimize maximum cluster radius.
+- Selects initial centers by iteratively choosing the point farthest from existing centres.
+- Assigns each point to its nearest centre forming clusters.
+- Does not update centres after initial selection, aiming to minimize maximum cluster radius.
 - Time complexity: O(k * n^2)
 
 ### Lloyd Algorithm with k-Means++ Initialization  
 
-- Initializes centers probabilistically with k-means++ to improve spread.
-- Alternates between assigning points to nearest centers and updating centers as cluster centroids (centers of gravity).
+- Initializes centres probabilistically with k-means++ to improve spread.
+- Alternates between assigning points to nearest centres and updating centres as cluster centroids (centres of gravity).
 - Iterates until convergence or maximum iterations reached, minimizing total within-cluster variance.
 - Time complexity: O(I * k * n * d)
 
 ### Soft k-Means
 
 - Initializes centers randomly.
-- Performs expectation step computing soft cluster membership probabilities based on distances and stiffness parameter beta.
-- Maximization step updates centers as weighted means using membership probabilities (centers of gravity).
+- Performs expectation step computing soft cluster membership probabilities based on distances and the stiffness parameter beta.
+- Maximization step updates centres as weighted means using membership probabilities (centres of gravity).
 - Iterates until convergence, allowing soft assignments to clusters.
 - Time complexity: O(I * k * n * d)
 
@@ -98,9 +98,9 @@ The variables points (expression vector matrix), k (number of clusters), beta (s
 
 ### CAST Algorithm
 
-- Builds similarity matrix based on Pearson correlation of expression vectors.
+- Builds a normalized distance-based similarity matrix.
 - Greedily forms clusters by adding points highly correlated above threshold theta and removing low-affinity points.
-- Updates clusters iteratively until stable, centers computed as mean vectors (centers of gravity).
+- Updates clusters iteratively until stable with centres computed as mean vectors (centres of gravity).
 - Time complexity: O(n^2 * d)
 
 ---
