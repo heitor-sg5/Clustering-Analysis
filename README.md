@@ -30,9 +30,9 @@ points = [[1.0,  2.0,  3.0,  4.0], [1.1,  2.1,  2.9,  4.1], [9.0,  8.9,  9.1,  9
 
 ### 2. Run the Algorithms
 
-The scripts will output the formed clusters (labeled 1, ..., n) containing the data points whithin each cluster, as well as the cluster's centre. 
+The scripts will output the formed clusters (labeled 1, ..., n) along with the data points assigned to each cluster and their corresponding cluster centers.
 
-However, if using `hierarchical_clustering.py`, a tree will be produced instead. 
+For `hierarchical_clustering.py`, instead of clusters, the output is a dendrogram (tree) representing the hierarchical relationships among the data points.
 
 ---
 
