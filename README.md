@@ -115,7 +115,7 @@ The variables points (expression vector matrix), k (number of clusters), beta (s
 
   Cluster 3: [[1.0, 2.0, 3.0, 4.0], [1.1, 2.1, 2.9, 4.1], [4.9, 5.1, 5.0, 5.2]] and centre = (2.3, 3.1, 3.6, 4.4)
   
-- Clusters Dendogram:
+- Clusters tree:
 
   8
   |-- 6 (len=0.1629)
