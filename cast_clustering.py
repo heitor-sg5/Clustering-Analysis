@@ -1,23 +1,26 @@
 import math
 import numpy as np
 
-def pearson_correlation(a, b):
-    a = np.asarray(a, dtype=float)
-    b = np.asarray(b, dtype=float)
-    am, bm = a.mean(), b.mean()
-    num = np.sum((a - am) * (b - bm))
-    den = math.sqrt(np.sum((a - am) ** 2) * np.sum((b - bm) ** 2))
-    if den == 0:
-        return 0.0
-    return num / den
+def euclidean_similarity(a, b, max_dist):
+    dist = np.linalg.norm(np.asarray(a) - np.asarray(b))
+    return 1 - dist / max_dist if max_dist != 0 else 1.0
 
 def build_similarity_matrix(points):
+    points = np.asarray(points, dtype=float)
     n = len(points)
+    max_dist = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            d = np.linalg.norm(points[i] - points[j])
+            max_dist = max(max_dist, d)
     R = np.zeros((n, n), dtype=float)
     for i in range(n):
         for j in range(i, n):
-            r = pearson_correlation(points[i], points[j])
-            R[i, j] = R[j, i] = r
+            if i == j:
+                R[i, j] = 1.0
+            else:
+                r = euclidean_similarity(points[i], points[j], max_dist)
+                R[i, j] = R[j, i] = r
     return R
 
 def mean_point(points):
