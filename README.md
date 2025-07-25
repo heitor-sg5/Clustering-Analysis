@@ -117,7 +117,7 @@ The variables points (expression vector matrix), k (number of clusters), beta (s
   
 - Clusters Dendogram:
 
- 8
+  8
   |-- 6 (len=0.1629)
     6
       |-- 3 (len=0.0842)
