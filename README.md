@@ -1,6 +1,6 @@
 # Clustering Analysis
 
-This repository implements several clustering algorithms to group multidimensional data points based on similarity or distance measures. The methods included are k-centres clustering, k-means clustering (Lloyd algorithm), soft k-means, Cluster Affinity Search Technique (CAST) clustering based on Pearson similarity, and hierarchical agglomerative clustering with different linkage criteria.
+This repository contains implementations of core clustering algorithms for analyzing multidimensional biological data, particularly expression vectors. These methods enable grouping of data points based on similarity or distance, using approaches such as k-centres, Lloyd’s k-means, soft k-means, Cluster Affinity Search Technique (CAST) clustering with Pearson correlation, and UPGMA hierarchical clustering.
 
 ---
 
