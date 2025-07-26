@@ -26,7 +26,7 @@ In biology, clusters refer to groups of expression vectors (numerical representa
 
 The input is an m-dimensional expression vector matrix, consisting of one or more values for each given variable (e.g. gene/protein) at different conditions and/or time points. For example:
 
-points = [[1.0,  2.0,  3.0,  4.0], [1.1,  2.1,  2.9,  4.1], [9.0,  8.9,  9.1,  9.2], [8.8,  9.2,  9.0,  9.1], [4.9,  5.1,  5.0,  5.2],]
+points = [[1.0,  2.0,  3.0,  4.0], [1.1,  2.1,  2.9,  4.1], [9.0,  8.9,  9.1,  9.2], [8.8,  9.2,  9.0,  9.1], [4.9,  5.1,  5.0,  5.2]]
 
 ### 2. Run the Algorithms
 
