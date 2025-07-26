@@ -50,7 +50,7 @@ points = [
         [1.1,  2.1,  2.9,  4.1],
         [9.0,  8.9,  9.1,  9.2],
         [8.8,  9.2,  9.0,  9.1],
-        [4.9,  5.1,  5.0,  5.2],
+        [4.9,  5.1,  5.0,  5.2]
     ]
 
 centres, responsibilities, clusters = soft_k_means(points, k=3, beta=1.0)
